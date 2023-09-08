@@ -46,10 +46,11 @@ class ProductController {
         require_once 'Views/products/edit.php';
     }
     // Xu ly chinh sua
-    public function update(){
-        $id = $_GET['id'];
-        Product::update($id, $_POST);
-        // Chuyen huong ve trang danh sach
+    public function update() {
+        $id = $_POST['id'];
+        $data = $_POST;
+        Product::update($id, $data);
+        // Chuyển hướng về trang danh sách
         header("Location: index.php?controller=product&action=index");
     }
 

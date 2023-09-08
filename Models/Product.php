@@ -139,13 +139,13 @@ class Product
         $start = ($page - 1) * $limit;
 
         // Tạo câu truy vấn SQL với LIMIT và OFFSET để phân trang
-        $sql = "SELECT * FROM `products` WHERE name like '%$name%' LIMIT $limit OFFSET $start";
+        $sql = "SELECT * FROM `products` WHERE ten_benh_nhan like '%$name%' LIMIT $limit OFFSET $start";
         $stmt = $conn->query($sql);
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $rows  = $stmt->fetch();
 
         // Đếm tổng số bản ghi
-        $countSql = "SELECT COUNT(*) as total FROM `products` WHERE name like '%$name%'";
+        $countSql = "SELECT COUNT(*) as total FROM `products` WHERE ten_benh_nhan like '%$name%'";
         $countStmt = $conn->query($countSql);
         $countResult = $countStmt->fetch(PDO::FETCH_ASSOC);
         $totalRecords = $countResult['total'];
