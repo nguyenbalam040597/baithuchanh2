@@ -69,6 +69,8 @@ th {
     <th>Giới tính</th>
     <th>Tình trạng</th>
     <th>Thông tin</th>
+    <th>Tùy chọn</th>
+
     </<tr>
 
     <!-- Bắt đầu lặp -->
